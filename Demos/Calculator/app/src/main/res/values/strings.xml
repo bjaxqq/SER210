@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string-array name="operations">
+        <item>none</item>
+        <item>/</item>
+        <item>*</item>
+    </string-array>
+</resources>
