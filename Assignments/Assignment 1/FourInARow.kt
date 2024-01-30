@@ -12,9 +12,9 @@ class FourInARow
     private val board = Array(GameConstants.ROWS) { IntArray(GameConstants.COLS){0} }
 
     override fun clearBoard() {
-        for (i in 0 until GameConstants.ROWS) {
-            for (j in 0 until GameConstants.COLS) {
-                board[i][j] = GameConstants.EMPTY
+        for (row in 0 until GameConstants.ROWS) {
+            for (col in 0 until GameConstants.COLS) {
+                board[row][col] = GameConstants.EMPTY
             }
         }
     }
@@ -29,93 +29,13 @@ class FourInARow
     }
 
     override val computerMove: Int
-        get() {
-            for (i in 0 until GameConstants.ROWS) {
-                for (j in 0 until GameConstants.COLS) {
-                    if (board[i][j] == GameConstants.EMPTY) {
-                        return i * GameConstants.COLS + j
-                    }
-                }
-            }
-            return 0
-        }
+        get() =// TODO Auto-generated method stub
+            0
 
     override fun checkForWinner(): Int {
-        for (row in 0 until GameConstants.ROWS) {
-            for (col in 0 until GameConstants.COLS - 3) {
-                if (board[row][col] != GameConstants.EMPTY &&
-                    board[row][col] == board[row][col + 1] &&
-                    board[row][col] == board[row][col + 2] &&
-                    board[row][col] == board[row][col + 3]
-                ) {
-                    return if (board[row][col] == GameConstants.BLUE) {
-                        GameConstants.BLUE_WON
-                    } else {
-                        GameConstants.RED_WON
-                    }
-                }
-            }
-        }
-
-        for (col in 0 until GameConstants.COLS) {
-            for (row in 0 until GameConstants.ROWS - 3) {
-                if (board[row][col] != GameConstants.EMPTY &&
-                    board[row][col] == board[row + 1][col] &&
-                    board[row][col] == board[row + 2][col] &&
-                    board[row][col] == board[row + 3][col]
-                ) {
-                    return if (board[row][col] == GameConstants.BLUE) {
-                        GameConstants.BLUE_WON
-                    } else {
-                        GameConstants.RED_WON
-                    }
-                }
-            }
-        }
-
-        for (row in 0 until GameConstants.ROWS - 3) {
-            for (col in 0 until GameConstants.COLS - 3) {
-                if (board[row][col] != GameConstants.EMPTY &&
-                    board[row][col] == board[row + 1][col + 1] &&
-                    board[row][col] == board[row + 2][col + 2] &&
-                    board[row][col] == board[row + 3][col + 3]
-                ) {
-                    return if (board[row][col] == GameConstants.BLUE) {
-                        GameConstants.BLUE_WON
-                    } else {
-                        GameConstants.RED_WON
-                    }
-                }
-            }
-        }
-
-        for (row in 0 until GameConstants.ROWS - 3) {
-            for (col in 3 until GameConstants.COLS) {
-                if (board[row][col] != GameConstants.EMPTY &&
-                    board[row][col] == board[row + 1][col - 1] &&
-                    board[row][col] == board[row + 2][col - 2] &&
-                    board[row][col] == board[row + 3][col - 3]
-                ) {
-                    return if (board[row][col] == GameConstants.BLUE) {
-                        GameConstants.BLUE_WON
-                    } else {
-                        GameConstants.RED_WON
-                    }
-                }
-            }
-        }
-
-        for (row in 0 until GameConstants.ROWS) {
-            for (col in 0 until GameConstants.COLS) {
-                if (board[row][col] == GameConstants.EMPTY) {
-                    return GameConstants.PLAYING
-                }
-            }
-        }
-    
-        return GameConstants.PLAYING
+        // TODO Auto-generated method stub
+        return 0
     }
-        
 
     /**
      * Print the game board
