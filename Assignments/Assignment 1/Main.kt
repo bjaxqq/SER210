@@ -30,7 +30,7 @@ fun main() {
       GameConstants.BLUE_WON -> println("The game has finished with a win for the users.")
       GameConstants.RED_WON -> println("The game has finished with a win for the computer.")
     }
-  }
+  } while (currentState == GameConstants.PLAYING && userInput != "q")
 // repeat if not game-over
 }
  
