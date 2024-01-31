@@ -29,8 +29,16 @@ class FourInARow
     }
 
     override val computerMove: Int
-        get() =// TODO Auto-generated method stub
-            0
+        get() {
+            for (row in 0 until GameConstants.ROWS) {
+                for (col in 0 until GameConstants.COLS) {
+                    if (board[row][col] == GameConstants.EMPTY) {
+                        return row * GameConstants.COLS + col
+                    }
+                }
+            }
+            return 0
+        }
 
     override fun checkForWinner(): Int {
         // TODO Auto-generated method stub
