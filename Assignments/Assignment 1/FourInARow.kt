@@ -11,23 +11,29 @@ class FourInARow
     // game board in 2D array initialized to zeros
     private val board = Array(GameConstants.ROWS) { IntArray(GameConstants.COLS){0} }
 
+    // Function for clearing the entire board
     override fun clearBoard() {
         for (row in 0 until GameConstants.ROWS) {
             for (col in 0 until GameConstants.COLS) {
+                // Setting each cell to an empty cell
                 board[row][col] = GameConstants.EMPTY
             }
         }
     }
 
+    // Function for setting the player's move
     override fun setMove(player: Int, location: Int) {
+        // Converting the location to coordinates
         val row = location / GameConstants.COLS
         val col = location % GameConstants.COLS
 
+        // Checking if the cell is empty or not before moving
         if (board[row][col] == GameConstants.EMPTY) {
             board[row][col] = player
         }
     }
 
+    // Function for the computer's AI
     override val computerMove: Int
         get() {
             for (row in 0 until GameConstants.ROWS) {
@@ -41,8 +47,85 @@ class FourInARow
         }
 
     override fun checkForWinner(): Int {
-        // TODO Auto-generated method stub
-        return 0
+        // Horizontal win check
+        for (row in 0 until GameConstants.ROWS) {
+            for (col in 0 until GameConstants.COLS - 3) {
+                if (board[row][col] != GameConstants.EMPTY &&
+                    board[row][col] == board[row][col + 1] &&
+                    board[row][col] == board[row][col + 2] &&
+                    board[row][col] == board[row][col + 3]
+                ) {
+                    return if (board[row][col] == GameConstants.BLUE) {
+                        GameConstants.BLUE_WON
+                    } else {
+                        GameConstants.RED_WON
+                    }
+                }
+            }
+        }
+
+        // Vertical win check
+        for (row in 0 until GameConstants.ROWS - 3) {
+            for (col in 0 until GameConstants.COLS) {
+                if (board[row][col] != GameConstants.EMPTY &&
+                    board[row][col] == board[row + 1][col] &&
+                    board[row][col] == board[row + 2][col] &&
+                    board[row][col] == board[row + 3][col]
+                ) {
+                    return if (board[row][col] == GameConstants.BLUE) {
+                        GameConstants.BLUE_WON
+                    } else {
+                        GameConstants.RED_WON
+                    }
+                }
+            }
+        }
+
+        // Diagonal (left to right) win check
+        for (row in 0 until GameConstants.ROWS - 3) {
+            for (col in 0 until GameConstants.COLS - 3) {
+                if (board[row][col] != GameConstants.EMPTY &&
+                    board[row][col] == board[row + 1][col + 1] &&
+                    board[row][col] == board[row + 2][col + 2] &&
+                    board[row][col] == board[row + 3][col + 3]
+                ) {
+                    return if (board[row][col] == GameConstants.BLUE) {
+                        GameConstants.BLUE_WON
+                    } else {
+                        GameConstants.RED_WON
+                    }
+                }
+            }
+        }
+
+        // Diagonal (right to left) win check
+        for (row in 0 until GameConstants.ROWS - 3) {
+            for (col in 3 until GameConstants.COLS) {
+                if (board[row][col] != GameConstants.EMPTY &&
+                    board[row][col] == board[row + 1][col - 1] &&
+                    board[row][col] == board[row + 2][col - 2] &&
+                    board[row][col] == board[row + 3][col - 3]
+                ) {
+                    return if (board[row][col] == GameConstants.BLUE) {
+                        GameConstants.BLUE_WON
+                    } else {
+                        GameConstants.RED_WON
+                    }
+                }
+            }
+        }
+
+        // Tie check
+        for (row in 0 until GameConstants.ROWS) {
+            for (col in 0 until GameConstants.COLS) {
+                if (board[row][col] == GameConstants.EMPTY) {
+                    // If there is an empty cell, the game is still in progress
+                    return GameConstants.PLAYING
+                }
+            }
+        }
+
+        return GameConstants.TIE
     }
 
     /**

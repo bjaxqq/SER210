@@ -11,27 +11,26 @@ fun main() {
   do {
     FIR_board.printBoard()
 
-    print("Enter your desired location (0-35): ")
-    val userLocation = readLine()?.toIntOrNull()
+    print("Enter a location for your move (0-35): ")
+    val userMove = readLine()?.toIntOrNull()
 
-    if (userLocation != null) {
-      FIR_board.setMove(GameConstants.BLUE, userLocation)
+    if (userMove != null) {
+      FIR_board.setMove(GameConstants.BLUE, userMove)
     }
 
     FIR_board.printBoard()
 
-    val computerLocation = FIR_board.computerMove
-    FIR_board.setMove(GameConstants.RED, computerLocation)
+    val computerMove = FIR_board.computerMove
+    FIR_board.setMove(GameConstants.RED, computerMove)
 
-    val gameState = FIR_board.checkForWinner()
+    val winState = FIR_board.checkForWinner()
 
-    when (gameState) {
-      GameConstants.TIE -> println("The game results in a tie.")
-      GameConstants.BLUE_WON -> println("The game results in a win for the user.")
-      GameConstants.RED_WON -> println("The game results in a win for the computer.")
+    when (winState) {
+      GameConstants.TIE -> println("The game has finished with a tie.")
+      GameConstants.BLUE_WON -> println("The game has finished with a win for the users.")
+      GameConstants.RED_WON -> println("The game has finished with a win for the computer.")
     }
-  
-  } while (currentState == GameConstants.PLAYING && userInput != "q")
+  }
 // repeat if not game-over
 }
  
