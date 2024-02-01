@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="edu.quinnipiac.ser210.moneysender.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_viewTransactionFragment"
+            app:destination="@id/viewTransactionFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_chooseRecipientFragment"
+            app:destination="@id/chooseRecipientFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewTransactionFragment"
+        android:name="edu.quinnipiac.ser210.moneysender.ViewTransactionFragment"
+        android:label="fragment_view_transaction"
+        tools:layout="@layout/fragment_view_transaction" />
+    <fragment
+        android:id="@+id/chooseRecipientFragment"
+        android:name="edu.quinnipiac.ser210.ls03_navigation.ChooseRecipientFragment"
+        android:label="ChooseRecipientFragment" >
+        <action
+            android:id="@+id/action_chooseRecipientFragment_to_specifyAmountFragment"
+            app:destination="@id/specifyAmountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="edu.quinnipiac.ser210.ls03_navigation.ConfirmationFragment"
+        android:label="ConfirmationFragment" >
+        <argument
+            android:name="recipient"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/specifyAmountFragment"
+        android:name="edu.quinnipiac.ser210.ls03_navigation.SpecifyAmountFragment"
+        android:label="SpecifyAmountFragment" >
+        <action
+            android:id="@+id/action_specifyAmountFragment_to_confirmationFragment"
+            app:destination="@id/confirmationFragment" />
+        <argument
+            android:name="recipient"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+</navigation>
