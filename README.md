@@ -6,4 +6,4 @@ This course serves as an introduction to software engineering using object-orien
 
 ### Tools and Languages Used
 
-This course is entirely focused on Android Development, so we had to use Kotlin for our assignments and projects. The majority of the work was done in Android Studio with the exception of Assignment 1 which was tested in IntelliJ.
+This course is entirely focused on Android Development, so we had to use Kotlin for our assignments and projects. The majority of the work was done in Android Studio with the exception of Assignment 1 which was tested in IntelliJ (terminal based connect-4 game).
