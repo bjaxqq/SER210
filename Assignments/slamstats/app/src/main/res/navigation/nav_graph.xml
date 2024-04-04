@@ -1,0 +1,29 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="edu.quinnipiac.slamstats.ui.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_basketballFragment"
+            app:destination="@id/basketballFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/basketballFragment"
+        android:name="edu.quinnipiac.slamstats.ui.BasketballFragment"
+        android:label="BasketballFragment" >
+        <argument
+            android:name="leagueId"
+            app:argType="string" />
+        <argument
+            android:name="season"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_basketballFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>
