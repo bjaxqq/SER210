@@ -52,4 +52,4 @@ Thanks to the NBA API for providing the data used in this app. If you would like
 
 ## Credits
 
-This app was created by Cole Davignon and Brooks Jackson.
+This app was created by [Cole Davignon](https://github.com/cdavignon) and Brooks Jackson.
