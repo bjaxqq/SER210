@@ -7,6 +7,5 @@
         android:id="@+id/helpFragment"
         android:icon="@android:drawable/ic_menu_help"
         android:title="Help"
-        app:showAsAction="always"/>
-
+        app:showAsAction="always" />
 </menu>

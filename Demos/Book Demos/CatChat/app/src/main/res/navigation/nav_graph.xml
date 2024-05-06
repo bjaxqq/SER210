@@ -8,19 +8,17 @@
 
     <fragment
         android:id="@+id/inboxFragment"
-        android:name="edu.quinnipiac.ser210.catchat.InboxFragment"
+        android:name="com.hfad.catchat.InboxFragment"
         android:label="Inbox"
-        tools:layout="@layout/fragment_inbox"/>
-
+        tools:layout="@layout/fragment_inbox" />
     <fragment
         android:id="@+id/helpFragment"
-        android:name="edu.quinnipiac.ser210.catchat.HelpFragment"
+        android:name="com.hfad.catchat.HelpFragment"
         android:label="Help"
-        tools:layout="@layout/fragment_help"/>
+        tools:layout="@layout/fragment_help" />
     <fragment
         android:id="@+id/sentItemsFragment"
-        android:name="edu.quinnipiac.ser210.catchat.SentItemsFragment"
+        android:name="com.hfad.catchat.SentItemsFragment"
         android:label="Sent Items"
-        tools:layout="@layout/fragment_sent_items"/>
-
+        tools:layout="@layout/fragment_sent_items" />
 </navigation>
