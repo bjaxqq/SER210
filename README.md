@@ -10,4 +10,4 @@ This course is entirely focused on Android Development, so we had to use Kotlin 
 
 ### Group Work
 
-Although most of the classwork for SER210 is on this repository, I have another GitHub account that I use for collaborative school projects that can be found [here](https://github.com/bajackson1). This includes all of those projects as well as a [documentation website](https://bajackson1.github.io/documentation/) for it.
+I have the separate repositories for the third assignment and the final project, both of the group projects from this class, and can be found on my GitHub page.
